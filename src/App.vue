@@ -8,9 +8,9 @@
     <TodoList 
       v-bind:propsdata="todoItems" 
       v-on:removeItem="removeOneItem"
-      v-on:toggleItem="toggleOneItem"
-      ></TodoList>
-    <TodoFooter></TodoFooter>
+      v-on:toggleItem="toggleOneItem"></TodoList>
+    <TodoFooter
+      v-on:clearAll="clearAllItems"></TodoFooter>
   </div>
 </template>
 
@@ -34,20 +34,28 @@ export default {
     TodoFooter,
   },
   methods: {
+    // 할 일 추가 기능
     addOneItem: function(todoItem) {
       let obj = {completed: false, item: todoItem};
       localStorage.setItem(todoItem, JSON.stringify(obj));
       this.todoItems.push(obj);
     },
+    // 할 일 삭제 기능
     removeOneItem: function(todoItem, index) {
       localStorage.removeItem(todoItem.item);
       this.todoItems.splice(index, 1);
     },
+    // 할 일 완료 기능
     toggleOneItem: function(todoItem, index) {
       this.todoItems[index].completed = !this.todoItems[index].completed; 
       localStorage.removeItem(todoItem.item);
       localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
-    }
+    },
+    // 할 일 모두 삭제 기능
+    clearAllItems: function() {
+      localStorage.clear();
+      this.todoItems = [];
+    },
   },
   // 인스턴스가 생성되자마자 호출
   created: function() {

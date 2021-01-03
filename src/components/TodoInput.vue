@@ -16,6 +16,7 @@ export default {
     }
   },
   methods: {
+    // 할 일 추가 기능
     addTodo: function() {
       if (this.newTodoItem !== '') {
         this.$emit("addTodoItem", this.newTodoItem);

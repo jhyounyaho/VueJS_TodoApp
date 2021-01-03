@@ -7,8 +7,9 @@
 <script>
 export default {
   methods: {
+    // 할 일 모두 삭제 기능
     clearTodo: function() {
-      localStorage.clear();
+      this.$emit("clearAll");
     },
   },
 }
