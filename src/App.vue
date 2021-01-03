@@ -1,3 +1,4 @@
+<!-- App.vue Container Component -->
 <template>
   <div id="app">
     <TodoHeader></TodoHeader>
@@ -57,7 +58,7 @@ export default {
       this.todoItems = [];
     },
   },
-  // 인스턴스가 생성되자마자 호출
+  // life cycle hook - 인스턴스가 생성되자마자 호출 
   created: function() {
     if (localStorage.length > 0) {
       for (let i = 0; i < localStorage.length; i++) {

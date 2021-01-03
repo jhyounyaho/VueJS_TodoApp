@@ -1,3 +1,4 @@
+<!-- TodoFooter.vue Presentational Component -->
 <template>
   <div class="clearAllContainer">
     <span class="clearAllBtn" v-on:click="clearTodo">Clear All</span>

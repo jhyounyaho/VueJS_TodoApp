@@ -1,3 +1,4 @@
+<!-- TodoInput.vue Presentational Component -->
 <template>
   <div class="inputBox shadow">
     <input type="text" v-model="newTodoItem" v-on:keyup.enter="addTodo">
