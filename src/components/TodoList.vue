@@ -29,8 +29,7 @@ export default {
       localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
     },
     removeTodo: function(todoItem, index) {
-      localStorage.removeItem(todoItem);
-      this.todoItems.splice(index, 1);
+      this.$emit('removeItem', todoItem, index);
     },
   },
 }
