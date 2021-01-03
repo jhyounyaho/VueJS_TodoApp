@@ -7,7 +7,9 @@
       v-on:addTodoItem="addOneItem"></TodoInput>
     <TodoList 
       v-bind:propsdata="todoItems" 
-      v-on:removeItem="removeOneItem"></TodoList>
+      v-on:removeItem="removeOneItem"
+      v-on:toggleItem="toggleOneItem"
+      ></TodoList>
     <TodoFooter></TodoFooter>
   </div>
 </template>
@@ -41,6 +43,11 @@ export default {
       localStorage.removeItem(todoItem.item);
       this.todoItems.splice(index, 1);
     },
+    toggleOneItem: function(todoItem, index) {
+      this.todoItems[index].completed = !this.todoItems[index].completed; 
+      localStorage.removeItem(todoItem.item);
+      localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
+    }
   },
   // 인스턴스가 생성되자마자 호출
   created: function() {
