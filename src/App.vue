@@ -37,7 +37,7 @@ export default {
   methods: {
     // 할 일 추가 기능
     addOneItem: function(todoItem) {
-      let obj = {completed: false, item: todoItem};
+      const obj = {completed: false, item: todoItem};
       localStorage.setItem(todoItem, JSON.stringify(obj));
       this.todoItems.push(obj);
     },
