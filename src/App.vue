@@ -58,16 +58,6 @@ export default {
       this.todoItems = [];
     },
   },
-  // life cycle hook - 인스턴스가 생성되자마자 호출 
-  created() {
-    if (localStorage.length > 0) {
-      for (let i = 0; i < localStorage.length; i++) {
-        if (localStorage.key(i) !== 'loglevel:webpack-dev-server') {
-          this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
-        }
-      }
-    }
-  },
 }
 </script>
 
