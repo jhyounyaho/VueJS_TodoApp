@@ -15,10 +15,11 @@ App.vue
 
 마크업, UI적으로 표현
 
-TodoHeader.vue  
-TodoInput.vue  
-TodoList.vue  
-TodoFooter.vue
+TodoHeader.vue           
+TodoInput.vue           
+TodoList.vue          
+TodoFooter.vue              
+common/Modal.vue             
 
 ## Todo App 리팩토링 전, 후 구조
 데이터를 Container Component 에서 관리, 변경해야 유지보수하기 쉽다.             
