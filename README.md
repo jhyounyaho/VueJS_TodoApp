@@ -1,3 +1,4 @@
+# Vue.js로 만드는 TODO App
 ## Todo App Component
 
 #### Container Component
@@ -15,10 +16,8 @@ TodoInput.vue
 TodoList.vue  
 TodoFooter.vue
 
-## Modal Component
+## Todo App 리팩토링 전, 후 구조
+데이터를 Container Component 에서 관리, 변경해야 유지보수하기 쉽다. 
+![vuejs_todoapp_before](https://user-images.githubusercontent.com/42309919/103492849-2db46480-4e71-11eb-84ae-dcbbefb8d58d.PNG)
+![vuejs_todoapp_after](https://user-images.githubusercontent.com/42309919/103492850-2e4cfb00-4e71-11eb-9b40-85e1a609a808.PNG)
 
-https://vuejs.org/v2/examples/modal.html
-
-## viewport 반응형웹
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
