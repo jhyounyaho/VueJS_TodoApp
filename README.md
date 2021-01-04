@@ -1,7 +1,7 @@
 # Vue.js로 만드는 TODO App
-강의명: [인프런] Vue.js 중급 강좌 - 웹앱 제작으로 배워보는 Vue.js, ES6, Vuex
-강사: 캡틴판교
-skill: JavaScript, Vue.js, ES6, Vuex
+강의명: [인프런] Vue.js 중급 강좌 - 웹앱 제작으로 배워보는 Vue.js, ES6, Vuex                  
+강사: 캡틴판교                  
+skill: JavaScript, Vue.js, ES6, Vuex                  
 
 ## Todo App Component
 
