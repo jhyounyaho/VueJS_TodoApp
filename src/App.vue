@@ -23,7 +23,7 @@ import TodoFooter from './components/TodoFooter';
 
 export default {
   name: 'App',
-  data: function() {
+  data() {
     return {
       todoItems: [],
     }
@@ -36,30 +36,30 @@ export default {
   },
   methods: {
     // 할 일 추가 기능
-    addOneItem: function(todoItem) {
+    addOneItem(todoItem) {
       const obj = {completed: false, item: todoItem};
       localStorage.setItem(todoItem, JSON.stringify(obj));
       this.todoItems.push(obj);
     },
     // 할 일 삭제 기능
-    removeOneItem: function(todoItem, index) {
+    removeOneItem(todoItem, index) {
       localStorage.removeItem(todoItem.item);
       this.todoItems.splice(index, 1);
     },
     // 할 일 완료 기능
-    toggleOneItem: function(todoItem, index) {
+    toggleOneItem(todoItem, index) {
       this.todoItems[index].completed = !this.todoItems[index].completed; 
       localStorage.removeItem(todoItem.item);
       localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
     },
     // 할 일 모두 삭제 기능
-    clearAllItems: function() {
+    clearAllItems() {
       localStorage.clear();
       this.todoItems = [];
     },
   },
   // life cycle hook - 인스턴스가 생성되자마자 호출 
-  created: function() {
+  created() {
     if (localStorage.length > 0) {
       for (let i = 0; i < localStorage.length; i++) {
         if (localStorage.key(i) !== 'loglevel:webpack-dev-server') {

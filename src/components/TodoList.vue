@@ -24,11 +24,11 @@ export default {
   props: ['propsdata'],
   methods: {
     // 할 일 완료 기능
-    toggleComplete: function(todoItem, index) {
+    toggleComplete(todoItem, index) {
       this.$emit('toggleItem', todoItem, index)
     },
     // 할 일 삭제 기능
-    removeTodo: function(todoItem, index) {
+    removeTodo(todoItem, index) {
       this.$emit('removeItem', todoItem, index);
     },
   },
