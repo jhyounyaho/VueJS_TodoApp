@@ -35,3 +35,6 @@ $emit: 자식 > 부모
 ![vuejs_todoapp_before](https://user-images.githubusercontent.com/42309919/103492849-2db46480-4e71-11eb-84ae-dcbbefb8d58d.PNG)
 ![vuejs_todoapp_after](https://user-images.githubusercontent.com/42309919/103492850-2e4cfb00-4e71-11eb-9b40-85e1a609a808.PNG)
 
+## 완강은 즐거워 :D 
+![vuejs 중급 강좌 수강증](https://user-images.githubusercontent.com/42309919/103765520-a4638480-5060-11eb-8138-3b60b48638a8.PNG)
+
