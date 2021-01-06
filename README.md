@@ -28,10 +28,44 @@ TodoList.vue
 TodoFooter.vue              
 common/Modal.vue             
 
+## Todo App 리펙토링 과정
+### 1. 각 component 에서 데이터 관리               
+- data              
+- computed              
+- methods               
+
+### 2. App.vue에서 데이터 관리        
+- props: 부모 > 자식                         
+- $emit: 자식 > 부모               
+
+### 3. Vuex를 사용하여 store.js 에서 데이터 관리
+- state               
+Vue의 data 와 같은 역할               
+this.$store.sate.message 로 접근               
+- getters               
+Vue의 computed 와 같은 역할               
+this.$store.getters.getNumber 로 접근               
+- mutation               
+vue의 methods 와 같은 역할               
+this.$store.commit('printNumber') 인자값 없을 때               
+this.$store.commit('printNumber', 20) 인자값 1개일때              
+this.$store.commit('printNumber', { add, 20 }) 인자값 n개일 때 obj 로 보내준다.               
+- actions              
+비동기 처리, 데이터요청        
+
+### 4. Vuex - helper 함수를 사용하여 store.js에서 데이터 관리               
+- state -> mapState              
+- getters -> mapGetters              
+- mutations -> mapMutations              
+...mapMutaions([ 'clickBtn', 'addNumber' ])              
+- actions -> mapActions               
+              
+### 5. modules/todoApp.js에서 모듈로 데이터를 가져와서 store.js에서 데이터 관리       
+- import
+- export 
+
 ## Todo App 리팩토링 전, 후 구조
 데이터를 Container Component 에서 관리, 변경해야 유지보수하기 쉽다.             
-props: 부모 > 자식                         
-$emit: 자식 > 부모              
 ![vuejs_todoapp_before](https://user-images.githubusercontent.com/42309919/103492849-2db46480-4e71-11eb-84ae-dcbbefb8d58d.PNG)
 ![vuejs_todoapp_after](https://user-images.githubusercontent.com/42309919/103492850-2e4cfb00-4e71-11eb-9b40-85e1a609a808.PNG)
 
@@ -53,7 +87,6 @@ TodoList 에서 할 일 목록 삭제 기능
 ### clearAllItems
 TodoFooter 에서 'clear all' 버튼 클릭시 전체 리스트 삭제 기능 
 ![todoapp_clearAllItems](https://user-images.githubusercontent.com/42309919/103766132-a2e68c00-5061-11eb-96ab-6271a75a22b0.PNG)
-
 
 ## 완강은 즐거워 :D 
 ![vuejs 중급 강좌 수강증](https://user-images.githubusercontent.com/42309919/103765520-a4638480-5060-11eb-8138-3b60b48638a8.PNG)
