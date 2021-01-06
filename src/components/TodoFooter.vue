@@ -6,12 +6,14 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
   methods: {
-    // 할 일 모두 삭제 기능
-    clearTodo() {
-      this.$store.commit("clearAllItems");
-    },
+    ...mapMutations({
+      // 할 일 모두 삭제 기능
+      clearTodo: 'clearAllItems',
+    }),
   },
 }
 </script>

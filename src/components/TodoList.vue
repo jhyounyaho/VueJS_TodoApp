@@ -2,16 +2,18 @@
 <template>
   <div>
     <transition-group name="list" tag="ul">
-      <li v-for="(todoItem, index) in this.$store.state.todoItems" v-bind:key="todoItem.item" class="shadow">
+      <li 
+        v-for="(todoItem, index) in this.storedTodoItems" 
+        v-bind:key="todoItem.item" class="shadow">
         <i 
           class="fas fa-check checkBtn shadow" 
           v-bind:class="{checkBtnCompleted: todoItem.completed}" 
-          v-on:click="toggleComplete(todoItem, index)"
+          v-on:click="toggleComplete({todoItem, index})"
         ></i>
         <span v-bind:class="{textCompleted: todoItem.completed}">
           {{ todoItem.item }}
         </span>  
-        <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">
+        <span class="removeBtn" v-on:click="removeTodo({todoItem, index})">
           <i class="fas fa-trash-alt shadow"></i>
         </span>
       </li>
@@ -20,16 +22,19 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex';
+
 export default {
+  computed: {
+    ...mapGetters(['storedTodoItems']),
+  },
   methods: {
-    // 할 일 완료 기능
-    toggleComplete(todoItem, index) {
-      this.$store.commit('toggleOneItem', {todoItem, index})
-    },
-    // 할 일 삭제 기능
-    removeTodo(todoItem, index) {
-      this.$store.commit('removeOneItem', {todoItem, index});
-    },
+    ...mapMutations({
+      // 할 일 삭제 기능
+      removeTodo: 'removeOneItem',
+      // 할 일 완료 기능
+      toggleComplete: 'toggleOneItem',
+    }),
   },
 }
 </script>
