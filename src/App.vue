@@ -4,14 +4,9 @@
     <TodoHeader></TodoHeader>
     <!-- v-on:자식method="부모method" -->
     <!-- v-bind:자식data="부모data" -->
-    <TodoInput 
-      v-on:addTodoItem="addOneItem"></TodoInput>
-    <TodoList 
-      v-bind:propsdata="todoItems" 
-      v-on:removeItem="removeOneItem"
-      v-on:toggleItem="toggleOneItem"></TodoList>
-    <TodoFooter
-      v-on:clearAll="clearAllItems"></TodoFooter>
+    <TodoInput></TodoInput>
+    <TodoList></TodoList>
+    <TodoFooter></TodoFooter>
   </div>
 </template>
 
@@ -23,11 +18,13 @@ import TodoFooter from './components/TodoFooter';
 
 export default {
   name: 'App',
+  /*
   data() {
     return {
       todoItems: [],
     }
   },
+  */
   components: {
     TodoHeader,
     TodoInput,
@@ -36,27 +33,35 @@ export default {
   },
   methods: {
     // 할 일 추가 기능
+    /*
     addOneItem(todoItem) {
       const obj = {completed: false, item: todoItem};
       localStorage.setItem(todoItem, JSON.stringify(obj));
       this.todoItems.push(obj);
     },
+    */
     // 할 일 삭제 기능
+    /*
     removeOneItem(todoItem, index) {
       localStorage.removeItem(todoItem.item);
       this.todoItems.splice(index, 1);
     },
+    */
     // 할 일 완료 기능
+    /*
     toggleOneItem(todoItem, index) {
       this.todoItems[index].completed = !this.todoItems[index].completed; 
       localStorage.removeItem(todoItem.item);
       localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
     },
+    */
     // 할 일 모두 삭제 기능
+    /*
     clearAllItems() {
       localStorage.clear();
       this.todoItems = [];
     },
+    */
   },
 }
 </script>

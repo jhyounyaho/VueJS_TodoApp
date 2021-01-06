@@ -36,7 +36,8 @@ export default {
     // 할 일 추가 기능
     addTodo() {
       if (this.newTodoItem !== '') {
-        this.$emit("addTodoItem", this.newTodoItem);
+        //this.$emit("addTodoItem", this.newTodoItem.trim());
+        this.$store.commit('addOneItem', this.newTodoItem.trim());
         this.clearInput();
       } else {
         this.showModal = !this.showModal;
