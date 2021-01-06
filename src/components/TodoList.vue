@@ -21,19 +21,13 @@
 
 <script>
 export default {
-  /*
-  // App.vue 에서 propr 로 내려서 데이터 관리 -> store에서 데이터 관리 변경 
-  prop: ['propsdata'],
-  */
   methods: {
     // 할 일 완료 기능
     toggleComplete(todoItem, index) {
-      // this.$emit('toggleItem', todoItem, index)
       this.$store.commit('toggleOneItem', {todoItem, index})
     },
     // 할 일 삭제 기능
     removeTodo(todoItem, index) {
-      // this.$emit('removeItem', todoItem, index);
       this.$store.commit('removeOneItem', {todoItem, index});
     },
   },

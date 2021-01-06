@@ -10,7 +10,6 @@ export default {
   methods: {
     // 할 일 모두 삭제 기능
     clearTodo() {
-      // this.$emit("clearAll");
       this.$store.commit("clearAllItems");
     },
   },
